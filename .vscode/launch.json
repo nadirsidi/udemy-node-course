@@ -11,7 +11,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/notes-app/app.js"
+            "program": "${workspaceFolder}/weather-app/app.js",
+            "args": ["Rochester"]
         }
     ]
 }
