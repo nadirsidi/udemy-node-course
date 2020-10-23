@@ -1,37 +1,19 @@
-setTimeout(() => {
-    console.log('Two seconds are up')
-}, 2000)
+// Example library code of a function that takes a callback
+const doWorkCallback = (callback) => {
+    setTimeout(() => {
+        // Structure of callback if there's an error
+        // callback('This is my error!', undefined)
 
-// const names = ['Nadir', 'Jen', 'Jess']
-// const shortNames = names.filter((name) => {
-//     return name.length <= 4
-// })
-
-// const geocode = (address, callback) => {
-//     setTimeout( () => {
-//         const data = {
-//             latitude: 0,
-//             longitude: 0
-//         }
-//         callback(data)
-//     }, 2000)
-// }
-
-// geocode('Philadelphia', (data) => {
-//     console.log(data)
-// })
-
-
-const add = (x, y, callback) => {
-
-    setTimeout( () => {
-        const sum = x + y
-        callback(sum)
+        // Structure of callback if the function is successful
+        callback(undefined, [1, 4, 7])
     }, 2000)
-
 }
 
-add(1, 4, (sum) => {
-    console.log(sum) // Should print: 5
-})
 
+// Example client calling a function that takes a callback
+doWorkCallback((error, result) => {
+    if (error) {
+        return console.log(error)
+    }
+    return console.log(result)
+})
